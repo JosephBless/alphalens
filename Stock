@@ -1,0 +1,24 @@
+Alphalens
+GitHub Actions status
+Alphalens is a Python Library for performance analysis of predictive (alpha) stock factors. Alphalens works great with the Zipline open source backtesting library, and Pyfolio which provides performance and risk analysis of financial portfolios. You can try Alphalens at Quantopian -- a free, community-centered, hosted platform for researching and testing alpha ideas. Quantopian also offers a fully managed service for professionals that includes Zipline, Alphalens, Pyfolio, FactSet data, and more.
+
+The main function of Alphalens is to surface the most relevant statistics and plots about an alpha factor, including:
+
+Returns Analysis
+Information Coefficient Analysis
+Turnover Analysis
+Grouped Analysis
+Getting started
+With a signal and pricing data creating a factor "tear sheet" is a two step process:
+
+import alphalens
+
+# Ingest and format data
+factor_data = alphalens.utils.get_clean_factor_and_forward_returns(my_factor,
+                                                                   pricing,
+                                                                   quantiles=5,
+                                                                   groupby=ticker_sector,
+                                                                   groupby_labels=sector_names)
+
+# Run analysis
+alphalens.tears.create_full_tear_sheet
